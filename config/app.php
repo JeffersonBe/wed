@@ -145,6 +145,7 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 		'Former\FormerServiceProvider',
+		'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
 	],
 
 	/*

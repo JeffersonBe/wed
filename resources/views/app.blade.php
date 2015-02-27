@@ -20,21 +20,22 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body>
+<body class="row">
 	<div class="container">
 		<header class="text-center">
-			<h1 >Showtime vous présente le WED 2012</h1>
+			<h1>Showtime vous présente le WED 2012</h1>
 			<p class="lead">Inscrivez-vous au Wed Showtime !</p>
-			<button>Inscrivez-vous !</button>
+			<button role="button" class="btn btn-default">Inscrivez-vous !</button>
 		</header>
 
 		@yield('content')
 
-		<footer>
+		<footer class="col-md-12">
+			<p class="text-center">© Showtime 2012</p>
 		</footer>
 	</div>
+
 	<!-- Scripts -->
-	<!-- Latest compiled and minified JavaScript -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>

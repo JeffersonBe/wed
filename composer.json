@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "5.0.*",
-		"anahkiasen/former": "~4.0@dev"
+		"anahkiasen/former": "~4.0@dev",
+		"anhskohbo/no-captcha": "~2.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
