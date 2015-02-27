@@ -1,9 +1,7 @@
 @extends('app')
 
 @section('content')
-<div id="main" role="main">
-		<h1>Inscrivez-vous au Wed Showtime !</h1>
-		<button id="inscription">Inscrivez-vous !</button>
+<main id="main" class="col-md-6 col-md-offset-3" role="main">
 		<form id="resa" method="post" action="reservation.php">
 				<p>
 			  		<label for="prenom">Prénom
@@ -60,5 +58,5 @@
 				</p>
 				<p>Inclure recaptcha</p>
 
-</div><!-- fin de de main -->
+</main><!-- fin de de main -->
 @endsection

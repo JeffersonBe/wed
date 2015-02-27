@@ -21,11 +21,18 @@
 	<![endif]-->
 </head>
 <body>
-	<header>
-		<p class="title">Showtime vous présente le WED 2012</p>
-	</header>
-	@yield('content')
+	<div class="container">
+		<header class="text-center">
+			<h1 >Showtime vous présente le WED 2012</h1>
+			<p class="lead">Inscrivez-vous au Wed Showtime !</p>
+			<button>Inscrivez-vous !</button>
+		</header>
 
+		@yield('content')
+
+		<footer>
+		</footer>
+	</div>
 	<!-- Scripts -->
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
