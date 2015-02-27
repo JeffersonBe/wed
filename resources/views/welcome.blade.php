@@ -9,6 +9,7 @@
 		    'firstName'				=> 'required|max:15|alpha',
 		    'lastName'				=> 'required|max:15|alpha',
 		    'email'					=> 'required|email',
+			'password'				=> 'required|max:30',
 		    'departs'				=> 'required',
 		    'alcool'				=> 'required',
 		    'tshirt'				=> 'required',
@@ -30,6 +31,12 @@
 	<?= Former::email('email')
 		->label("Email")
 		->placeholder("Enter you name") ?>
+
+	<?= Former::password('password')
+		->label("Password")
+		->placeholder("Enter you password") ?>
+
+	<hr>
 
 	<?= Former::select('departs')
 		->label("Chosse you departure")
