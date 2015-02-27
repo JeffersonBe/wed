@@ -5,6 +5,18 @@
 	<?= Former::vertical_open()
 		->id('wedForm')
 		->secure()
+		->rules(array(
+		    'firstName'				=> 'required|max:15|alpha',
+		    'lastName'				=> 'required|max:15|alpha',
+		    'email'					=> 'required|email',
+		    'departs'				=> 'required',
+		    'alcool'				=> 'required',
+		    'tshirt'				=> 'required',
+			'diet'					=> 'required',
+		    'g-recaptcha-response'  => 'required|recaptcha',
+		))
+		->withErrors()
+		->setOption('live_validation', true)
 		->method('POST') ?>
 
 	<?= Former::text('firstName')
@@ -22,44 +34,43 @@
 	<?= Former::select('departs')
 		->label("Chosse you departure")
 		->options(array(
-			    1  => 'Evry',
-			    2  => 'Paris',
+			'evry'	=> 'Evry',
+			'paris'	=> 'Paris',
 		)); ?>
 
 	<?= Former::select('alcool')
 		->label("Alcool")
 		->options(array(
-			1  => 'None',
-			2  => 'Rhum',
-			3  => 'Rhum',
-			4  => 'Pastis',
-			5  => 'None',
+			'name'  	=> 'None',
+			'rhum'  	=> 'Rhum',
+			'vodka'  	=> 'Vodka',
+			'pastis'  	=> 'Pastis',
  		)); ?>
 
 	<?= Former::select('tshirt')
 		->label("Choose the size of your t-shirt")
 		->options(array(
-			1  => 'S',
-			2  => 'M',
-			3  => 'L',
-			4  => 'XL',
+			's'  	=> 'S',
+			'm'  	=> 'M',
+			'l'  	=> 'L',
+			'xl'  	=> 'XL',
 		)); ?>
 
 	<?= Former::select('diet')
 		->label("Choose your diet")
 		->options(array(
-			1  => 'Normal',
-			2  => 'Vegean',
-			3  => 'Halal',
-			4  => 'Kasher',
+			'normal'  	=> 'Normal',
+			'vegean'  	=> 'Vegean',
+			'halal'  	=> 'Halal',
+			'kasher'  	=> 'Kasher',
 		)); ?>
 
 	{!! app('captcha')->display() !!}
 
 	<?= Former::actions()
-  			->class('text-center')
-  			->large_primary_submit('Réservez votre voyage !')
-			?>
+			->class('text-center')
+			->large_primary_submit('Réservez votre voyage !')
+		?>
 
 	<?= Former::close() ?>
 </main><!-- fin de de main -->
