@@ -1,4 +1,0 @@
-AuthName "Page d'administration protégée"
-AuthType Basic
-AuthUserFile "/homepages/5/d390465195/htdocs/wed/admin/.htpasswd"
-Require valid-user
