@@ -45,6 +45,7 @@ class WelcomeController extends Controller {
 		User::createUser($request);
         $user = User::where('email', '=', $request->email)->firstOrFail();
         Booking::createBooking($request,$user->id);
-        return view('welcome');
+
+        return redirect()->back();
 	}
 }
