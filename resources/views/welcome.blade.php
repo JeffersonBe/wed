@@ -6,13 +6,12 @@
 		->id('wedForm')
 		->secure()
 		->rules(array(
-		    'firstName'				=> 'required|max:15|alpha',
-		    'lastName'				=> 'required|max:15|alpha',
+		    'name'				=> 'required|max:15|alpha',
 		    'email'					=> 'required|email',
 			'password'				=> 'required|max:30',
-		    'departs'				=> 'required',
-		    'alcool'				=> 'required',
-		    'tshirt'				=> 'required',
+		    'depart'				=> 'required',
+		    'alcohol'				=> 'required',
+		    't_shirt'				=> 'required',
 			'diet'					=> 'required',
 		    'g-recaptcha-response'  => 'required|recaptcha',
 		))
@@ -20,13 +19,9 @@
 		->setOption('live_validation', true)
 		->method('POST') ?>
 
-	<?= Former::text('firstName')
-		->label("First name")
-		->placeholder("Enter you name") ?>
-
-	<?= Former::text('lastName')
-		->label("Last name")
-		->placeholder("Enter you name") ?>
+	<?= Former::text('name')
+		->label("First Name")
+		->placeholder("Enter you first name") ?>
 
 	<?= Former::email('email')
 		->label("Email")
@@ -38,14 +33,14 @@
 
 	<hr>
 
-	<?= Former::select('departs')
+	<?= Former::select('depart')
 		->label("Chosse you departure")
 		->options(array(
 			'evry'	=> 'Evry',
 			'paris'	=> 'Paris',
 		)); ?>
 
-	<?= Former::select('alcool')
+	<?= Former::select('alcohol')
 		->label("Alcool")
 		->options(array(
 			'name'  	=> 'None',
@@ -54,7 +49,7 @@
 			'pastis'  	=> 'Pastis',
  		)); ?>
 
-	<?= Former::select('tshirt')
+	<?= Former::select('t_shirt')
 		->label("Choose the size of your t-shirt")
 		->options(array(
 			's'  	=> 'S',
@@ -72,7 +67,7 @@
 			'kasher'  	=> 'Kasher',
 		)); ?>
 
-	{!! app('captcha')->display() !!}
+    {!! Recaptcha::render() !!}
 
 	<?= Former::actions()
 			->class('text-center')

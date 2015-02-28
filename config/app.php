@@ -145,8 +145,8 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 		'Former\FormerServiceProvider',
-		'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
-	],
+        'Greggilbert\Recaptcha\RecaptchaServiceProvider',
+    ],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -194,7 +194,8 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Former'    => 'Former\Facades\Former',
-
+        'Recaptcha' => 'Greggilbert\Recaptcha\Facades\Recaptcha',
+        'Uuid'      => 'Webpatser\Uuid\Uuid',
 	],
 
 ];

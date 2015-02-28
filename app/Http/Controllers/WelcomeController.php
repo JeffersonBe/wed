@@ -1,5 +1,10 @@
 <?php namespace App\Http\Controllers;
 
+use Request;
+use App\Http\Requests\StoreBookingRequest;
+use App\User;
+use App\Booking;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -13,11 +18,9 @@ class WelcomeController extends Controller {
 	|
 	*/
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
+    /**
+     *
+     */
 	public function __construct()
 	{
 		$this->middleware('guest');
@@ -33,4 +36,15 @@ class WelcomeController extends Controller {
 		return view('welcome');
 	}
 
+    /**
+     * @param StoreBookingRequest $request
+     * @return \Illuminate\View\View
+     */
+	public function store(StoreBookingRequest $request)
+	{
+		User::createUser($request);
+        $user = User::where('email', '=', $request->email)->firstOrFail();
+        Booking::createBooking($request,$user->id);
+        return view('welcome');
+	}
 }
