@@ -9,7 +9,8 @@
 		"anahkiasen/former": "~4.0@dev",
 		"barryvdh/laravel-ide-helper": "~2.0",
 		"greggilbert/recaptcha": "~2.0",
-		"webpatser/laravel-uuid": "~1.4"
+		"webpatser/laravel-uuid": "~1.4",
+		"guzzlehttp/guzzle": "~5.2"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

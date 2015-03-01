@@ -1,22 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-use Request;
 use App\Http\Requests\StoreBookingRequest;
 use App\User;
 use App\Booking;
+use App\Events\Event;
+use App\Events\UserHasBooked;
 
 class WelcomeController extends Controller {
-
-	/*
-	|--------------------------------------------------------------------------
-	| Welcome Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders the "marketing page" for the application and
-	| is configured to only allow guests. Like most of the other sample
-	| controllers, you are free to modify or remove it as you desire.
-	|
-	*/
 
     /**
      *
@@ -45,7 +35,9 @@ class WelcomeController extends Controller {
 		User::createUser($request);
         $user = User::where('email', '=', $request->email)->firstOrFail();
         Booking::createBooking($request,$user->id);
+        $booking = Booking::where('user_id', '=', $user->id)->firstOrFail();
 
+        \Event::fire(new UserHasBooked($user->id, $booking->id));
         return redirect()->back();
 	}
 }
